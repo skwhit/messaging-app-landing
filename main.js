@@ -1,4 +1,5 @@
 const video = document.getElementById("demo-vid");
+video.play();
 let playState = null;
 
 const observer = new IntersectionObserver((entries) => {
