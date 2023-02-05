@@ -13,6 +13,7 @@ body {
 
 .landing {
     background: linear-gradient(135deg, lightskyblue,black);
+    display: flex;
 }
 
 .landing-container {
@@ -33,7 +34,7 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
-    padding: 120px;
+    padding: 5%;
     text-align: center;
     gap: 30px;
 }
@@ -70,21 +71,35 @@ body {
 
 .showcase-container {
     width: 50%;
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
+    /* overflow: visible; */
+    padding: 3% 5% 3% 0;
+}
+
+.showcase-container div {
+    /* height: 80vh;
+    min-height: 450px; */
+    overflow: visible;
 }
 
 .showcase-one {
-    position: absolute;
-    transform: rotate(-5deg);
-    z-index: 1;
+    /* position: absolute; */
+    transform: rotate(-5deg) translate(20px, -20px);
+    z-index: 2;
+    overflow: visible;
+
 }
 
-
 .showcase-two {
-    position: absolute;
-    transform: rotate(10deg) translate(270px, -20px);
+    /* position: absolute; */
+    transform: rotate(10deg) translate(-30px, 10px);
+}
+
+.showcase-container img {
+    height: 100%;
+    width: 100%;
 }
 
 .features {
@@ -92,7 +107,7 @@ body {
     margin: 0 auto;
     max-width: 1400px;
     min-height: 100vh;
-    padding: 10px;
+    padding: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -139,7 +154,7 @@ font-size: 1.5rem;
 }
 .feature-info li {
     list-style: none;
-    margin: 1.5rem;
+    margin: 1.5rem 0;
     color: black;
 }
 
@@ -151,32 +166,74 @@ font-size: 1.5rem;
     height: 40px;
 }
 
+/* @media(max-height: 500) */
+
 @media (max-width: 1000px) {
     .landing-container  {
         flex-direction: column;
         justify-content: flex-start;
         padding-bottom: 500px;
+        padding: 10%;
+        gap: 50px;
+        overflow: visible;
     }
     .app-info {
         width: 100%;
+
     }
+
+    .app-info h1 {
+        font-size: 2rem;
+    }
+    
+    .app-info p {
+        font-size: 1.3rem;
+    }
+
     .showcase-container {
         width: 100%;
+        min-height: auto;
+        justify-content: center;
+        padding: 10% 0;
+
     }
-    .showcase-one {
-        position: absolute;
-        transform: rotate(-5deg);
-        z-index: 1;
+
+    .demo-container {
+        width: 100%;
+        padding: 5% 0;
     }
-    .showcase-two {
-        position: absolute;
-        transform: rotate(10deg) translate(270px, -20px);
-    }
+
     .features {
         flex-direction: column;
-        gap: 50px;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 25px;
+
     }
     .feature-info {
         width: 100%;
+        justify-content: center;
+    }
+
+    .feature-info h1 {
+       font-size: 2rem;
+    }
+
+    .feature-info li {
+        font-size: 1.3rem;
+    }
+
+    .landing-link {
+        margin-top: 20px;
+        margin-right: 25px;
+    }
+}
+
+@media (max-width: 400px) {
+    .nav {
+        flex-direction: column;
+        height: 100px;
+        gap: 15px;
     }
 }
